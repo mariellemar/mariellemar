@@ -1,0 +1,251 @@
+<!--Code created in [glitch.com] for a VR college project, it shows a world tour based on a few turistic places. Access in: https://tourmundo-aranoua.glitch.me -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Aranoua</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <!-- Textturas -->
+        <img id="cena1" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/quadraEspanha2MD.jpg?v=1670738699591">
+        <img id="cena2" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/torreEiffelMD.jpg?v=1670734136678">
+        <img id="cena3" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/torrePisaMD.jpg?v=1670735181855">
+        <img id="cena4" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/cristoRedentorMD.jpg?v=1670735386048">
+        <img id="cena5" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/coliseuMD.jpg?v=1670737356888">
+        <img id="cena6" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/machuPicchuMD.jpg?v=1670737357055">
+        <img id="cena7" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/tajMahalMD?v=1670737360288">
+        <img id="cena8" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/muralhaChinaMD.jpg?v=1670737892290">
+        
+        <!-- Imagens botoes -->
+        <img id="iconeBotaoCena1" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/PE.jpg?v=1670739887978">
+        <img id="iconeBotaoCena2" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/TE.jpg?v=1670740224655">
+        <img id="iconeBotaoCena3" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/TP.jpg?v=1670740227312">
+        <img id="iconeBotaoCena4" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/CR.jpg?v=1670740488745">
+        <img id="iconeBotaoCena5" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/CL.jpg?v=1670740493276">
+        <img id="iconeBotaoCena6" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/MP.jpg?v=1670740495566">
+        <img id="iconeBotaoCena7" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/TM.jpg?v=1670740546605">
+        <img id="iconeBotaoCena8" src="https://cdn.glitch.global/bfccd550-6c5d-40ec-a5a9-567e3bc8a9d1/MC.jpg?v=1670740549450">
+        
+      </a-assets>
+      
+      <a-camera position="0 1.6 0">
+        <a-cursor id="cursor"
+                  animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+                  animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"
+                  animation__mouseleave="property: scale; startEvents: mouseleave; easing: easeInCubic; dur: 500; to: 1 1 1"
+                  cursor="fuse: true;"
+                  material="color: black; shader: flat"
+                  position="0 0 -3"
+                  geometry="primitive: ring">
+        </a-cursor>
+      </a-camera>
+      <!-- Botoes -->
+      <a-plane id= "botaoCena1" src="#iconeBotaoCena1" position="-1 2 -3" width="0.925" height ="0.325"
+               
+               event-set__aumentar="_event: mouseenter;
+                                    animation.property: scale;
+                                    animation.from: 1 1 1;
+                                    animation.to: 1.4 1.4 1.4
+                                    animation.dur: 20;"
+               
+               event-set__diminuir="_event: mouseleave;
+                                    animation.property: scale;
+                                    animation.from: 1.4 1.4 1.4;
+                                    animation.to: 1 1 1
+                                    animation.dur: 20;"
+               
+               event-set__mouseenter="_event: mouseenter;
+                                      _target: #cursor;
+                                      color:red;"
+               event-set__mouseleaver="_event: mouseleaver;
+                                      _target: #cursor;
+                                      color:black;"
+                                        
+               event-set__textura="_event: click;
+                                   _target: #sky;
+                                   src: #cena1;"></a-plane>
+      
+      <a-plane id= "botaoCena2" src="#iconeBotaoCena2" position="1 2 -3" width="0.925" height ="0.325"
+               
+               event-set__aumentar="_event: mouseenter;
+                                    animation.property: scale;
+                                    animation.from: 1 1 1;
+                                    animation.to: 1.4 1.4 1.4
+                                    animation.dur: 20;"
+               
+               event-set__diminuir="_event: mouseleave;
+                                    animation.property: scale;
+                                    animation.from: 1.4 1.4 1.4;
+                                    animation.to: 1 1 1
+                                    animation.dur: 20;"
+               
+               event-set__mouseenter="_event: mouseenter;
+                                      _target: #cursor;
+                                      color:red;"
+               event-set__mouseleaver="_event: mouseleaver;
+                                      _target: #cursor;
+                                      color:black;"
+                                       
+               event-set__textura="_event: click;
+                                   _target: #sky;
+                                   src: #cena2;"></a-plane>
+      
+      <a-plane id= "botaoCena3" src="#iconeBotaoCena3" position="-1 1.6 -3" width="0.925" height ="0.325"
+               
+               event-set__aumentar="_event: mouseenter;
+                                    animation.property: scale;
+                                    animation.from: 1 1 1;
+                                    animation.to: 1.4 1.4 1.4
+                                    animation.dur: 20;"
+               
+               event-set__diminuir="_event: mouseleave;
+                                    animation.property: scale;
+                                    animation.from: 1.4 1.4 1.4;
+                                    animation.to: 1 1 1
+                                    animation.dur: 20;"
+               
+               event-set__mouseenter="_event: mouseenter;
+                                      _target: #cursor;
+                                      color:red;"
+               event-set__mouseleaver="_event: mouseleave;
+                                      _target: #cursor;
+                                      color:black;"
+               
+               event-set__textura="_event: click;
+                                   _target: #sky;
+                                   src: #cena3;"></a-plane>
+      
+      <a-plane id= "botaoCena4" src="#iconeBotaoCena4" position="1 1.6 -3" width="0.925" height ="0.325"
+               
+               event-set__aumentar="_event: mouseenter;
+                                    animation.property: scale;
+                                    animation.from: 1 1 1;
+                                    animation.to: 1.4 1.4 1.4
+                                    animation.dur: 20;"
+               
+               event-set__diminuir="_event: mouseleave;
+                                    animation.property: scale;
+                                    animation.from: 1.4 1.4 1.4;
+                                    animation.to: 1 1 1
+                                    animation.dur: 20;"
+               
+               event-set__mouseenter="_event: mouseenter;
+                                      _target: #cursor;
+                                      color:red;"
+               event-set__mouseleaver="_event: mouseleaver;
+                                      _target: #cursor;
+                                      color:black;"
+               
+               event-set__textura="_event: click;
+                                   _target: #sky;
+                                   src: #cena4;"></a-plane>
+      
+      <a-plane id= "botaoCena5" src="#iconeBotaoCena5" position="-1 2.4 -3" width="0.925" height ="0.325"
+               
+               event-set__aumentar="_event: mouseenter;
+                                    animation.property: scale;
+                                    animation.from: 1 1 1;
+                                    animation.to: 1.4 1.4 1.4
+                                    animation.dur: 20;"
+               
+               event-set__diminuir="_event: mouseleave;
+                                    animation.property: scale;
+                                    animation.from: 1.4 1.4 1.4;
+                                    animation.to: 1 1 1
+                                    animation.dur: 20;"
+               
+               event-set__mouseenter="_event: mouseenter;
+                                      _target: #cursor;
+                                      color:red;"
+               event-set__mouseleaver="_event: mouseleaver;
+                                      _target: #cursor;
+                                      color:black;"
+                                        
+               event-set__textura="_event: click;
+                                   _target: #sky;
+                                   src: #cena5;"></a-plane>
+      
+      <a-plane id= "botaoCena6" src="#iconeBotaoCena6" position="1 2.4 -3" width="0.925" height ="0.325"
+               
+               event-set__aumentar="_event: mouseenter;
+                                    animation.property: scale;
+                                    animation.from: 1 1 1;
+                                    animation.to: 1.4 1.4 1.4
+                                    animation.dur: 20;"
+               
+               event-set__diminuir="_event: mouseleave;
+                                    animation.property: scale;
+                                    animation.from: 1.4 1.4 1.4;
+                                    animation.to: 1 1 1
+                                    animation.dur: 20;"
+               
+               event-set__mouseenter="_event: mouseenter;
+                                      _target: #cursor;
+                                      color:red;"
+               event-set__mouseleaver="_event: mouseleaver;
+                                      _target: #cursor;
+                                      color:black;"
+                                        
+               event-set__textura="_event: click;
+                                   _target: #sky;
+                                   src: #cena6;"></a-plane>
+      
+      <a-plane id= "botaoCena7" src="#iconeBotaoCena7" position="-1 1.2 -3" width="0.925" height ="0.325"
+               
+               event-set__aumentar="_event: mouseenter;
+                                    animation.property: scale;
+                                    animation.from: 1 1 1;
+                                    animation.to: 1.4 1.4 1.4
+                                    animation.dur: 20;"
+               
+               event-set__diminuir="_event: mouseleave;
+                                    animation.property: scale;
+                                    animation.from: 1.4 1.4 1.4;
+                                    animation.to: 1 1 1
+                                    animation.dur: 20;"
+               
+               event-set__mouseenter="_event: mouseenter;
+                                      _target: #cursor;
+                                      color:red;"
+               event-set__mouseleaver="_event: mouseleaver;
+                                      _target: #cursor;
+                                      color:black;"
+                                        
+               event-set__textura="_event: click;
+                                   _target: #sky;
+                                   src: #cena7;"></a-plane>
+      
+      <a-plane id= "botaoCena8" src="#iconeBotaoCena8" position="1 1.2 -3" width="0.925" height ="0.325"
+               
+               event-set__aumentar="_event: mouseenter;
+                                    animation.property: scale;
+                                    animation.from: 1 1 1;
+                                    animation.to: 1.4 1.4 1.4
+                                    animation.dur: 20;"
+               
+               event-set__diminuir="_event: mouseleave;
+                                    animation.property: scale;
+                                    animation.from: 1.4 1.4 1.4;
+                                    animation.to: 1 1 1
+                                    animation.dur: 20;"
+               
+               event-set__mouseenter="_event: mouseenter;
+                                      _target: #cursor;
+                                      color:red;"
+               event-set__mouseleaver="_event: mouseleaver;
+                                      _target: #cursor;
+                                      color:black;"
+                                        
+               event-set__textura="_event: click;
+                                   _target: #sky;
+                                   src: #cena8;"></a-plane>
+      <!-- Sky -->
+      <a-sky id="sky" src="#cena1"></a-sky>
+      
+    </a-scene>
+  </body>
+  
+</html>
