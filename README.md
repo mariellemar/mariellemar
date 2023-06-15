@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @mariellemar
-- 👀 I’m interested in programming, IA and RV
-- 🌱 I’m currently learning python, javascript and C
+- 👀 I’m interested in programming
+- 🌱 I’m currently learning Dajngo and Angular
 - 📫 How to reach me mariellemarsantos@gmail.com
 
 <!---
