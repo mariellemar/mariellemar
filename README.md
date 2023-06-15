@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @mariellemar
-- 👀 I’m interested in programming
+- 👀 I’m interested in back-end programming and DB
 - 🌱 I’m currently learning Dajngo and Angular
 - 📫 How to reach me mariellemarsantos@gmail.com
 
