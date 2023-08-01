@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @mariellemar
-- 👀 I’m interested in back-end programming and DB
-- 🌱 I’m currently learning Dajngo and Angular
+- 👀 I’m interested in back-end programming, DB and ML
+- 🌱 I’m currently learning Django, Docker and SQL
 - 📫 How to reach me mariellemarsantos@gmail.com
 
 <!---
